@@ -1,0 +1,59 @@
+@import "../styles/variables";
+
+
+.css-i4bv87-MuiSvgIcon-root {
+    color: #b1abab;
+}
+
+.jodit-status-bar a.jodit-status-bar-link {
+  display: none;
+}
+
+.btn-primary {
+    background-color: $bb_theme_color !important;
+    border-color: $bb_theme_color !important;
+}
+
+
+.modal-color {
+    color: $bb_theme_color;
+}
+
+/* Sweet Alert Coustomize Start */
+ .swal2-title {
+    font-size: 13px !important;
+  }
+  
+  .swal2-html-container {
+    font-size: 12px !important;
+  }
+  .swal2-icon {
+    font-size: 8px !important;
+  }
+  .swal2-styled.swal2-confirm {
+    font-size: 11px !important;
+  }
+  .swal2-styled.swal2-cancel {
+    font-size: 11px !important;
+  }
+  
+  .swal2-popup {
+    width: 200px !important;
+  } 
+  /* Sweet Alert Coustomize End  */
+
+  .row
+  {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  .btn-bb-lms{
+    background-color: $bb_theme_color !important;
+  }
+  
+  .btn-close{
+    background-color: white !important;
+  }
+
+ 
