@@ -32,6 +32,10 @@ const EventPhoto = () => {
       formData.append('is_active', values.is_active ? 1 : 0);
 
       try {
+        if (!values.image) {
+          toast.warn("Image is required");
+          return;
+        }
         const result = await eventPhotoSaveOrUpdate(formData).unwrap();
         resetForm();
         toast.success(result.message);

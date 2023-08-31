@@ -4,6 +4,7 @@ import Loader from "../../components/Loader";
 import { FiPlusCircle } from "react-icons/fi";
 import MenuModal from "./EVotingModal";
 import { useGetPollQuery } from "../../../services/resourceApi";
+import { BiEdit } from "react-icons/bi";
 const EVotingList = () => {
   const res = useGetPollQuery();
   const { data, isSuccess, isFetching, isError } = res;
@@ -97,7 +98,7 @@ const EVotingList = () => {
                             setSize("lg")
                           }}
                         >
-                          Edit
+                         <BiEdit size={18}/> Edit
                         </button>
 
                       </td>

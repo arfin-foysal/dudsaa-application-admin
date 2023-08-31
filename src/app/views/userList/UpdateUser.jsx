@@ -2,7 +2,8 @@ import { useFormik } from "formik";
 import { Form, Modal } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { useUserCreateOrUpdateMutation } from "../../../services/userApi";
-const UpdateUser = ({ handleClose,paramValue }) => {
+const UpdateUser = ({ handleClose, paramValue }) => {
+    console.log(paramValue)
     const [userCreateOrUpdate, res] = useUserCreateOrUpdateMutation();
     const formik = useFormik({
         enableReinitialize:true,
@@ -16,6 +17,7 @@ const UpdateUser = ({ handleClose,paramValue }) => {
             'batch_no': paramValue?.batch_no,
             'user_type': paramValue?.user_type,
             'image': paramValue?.image,
+            'status': paramValue?.status,
             'is_active': paramValue?.is_active,
         },
 
@@ -31,6 +33,7 @@ const UpdateUser = ({ handleClose,paramValue }) => {
             formData.append('date_of_birth', values.date_of_birth);
             formData.append('batch_no', values.batch_no);
             formData.append('image', values.image);
+            formData.append('status', values.status);
             formData.append('is_active', values.is_active ? 1 : 0);
             resetForm()
             try {
@@ -39,17 +42,12 @@ const UpdateUser = ({ handleClose,paramValue }) => {
 
             } catch (error) {
                 toast.warn(error.data.message);
-
             }
         },
     });
-
-
-
     if (res.isSuccess) {
         handleClose();
     }
-
     return (
         <div>
             <form
@@ -72,8 +70,7 @@ const UpdateUser = ({ handleClose,paramValue }) => {
                             />
                         </div>
                     </div>
-     
-            
+    
                     <div className="form-group col-12 my-1">
                         <label className="col-12 col-form-label">Email<span className=" text-danger">*</span></label>
                         <div className="col-12">
@@ -89,7 +86,7 @@ const UpdateUser = ({ handleClose,paramValue }) => {
                             />
                         </div>
                     </div>
-                    <div className="form-group col-12 my-1">
+                    <div className="form-group col-6 my-1">
                         <label className="col-12 col-form-label">Contact No<span className=" text-danger">*</span></label>
                         <div className="col-12">
                             <input
@@ -135,6 +132,23 @@ const UpdateUser = ({ handleClose,paramValue }) => {
                                 <option value="" disabled selected hidden> --Select-- </option>
                                 <option value="Member">Member</option>
                                 <option value="Admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="form-group col-6 my-1">
+                        <label className="col-12 col-form-label">Status</label>
+                        <div className="col-12">
+                            <select
+                                className="form-control"
+                                name="status"
+                                onChange={formik.handleChange}
+                                value={formik.values.status}
+                            >
+                                <option value="" disabled selected hidden> --Select-- </option>
+                                <option value="Pending">Pending</option>
+                                <option value="Active">Active</option>
+                                <option value="Suspended">Suspended</option>
+                                <option value="On-Hold">On-Hold</option>
                             </select>
                         </div>
                     </div>

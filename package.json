@@ -1,22 +1,24 @@
 {
   "name": "bb-saas-lms-admin",
+  "homepage": "http://http://dudsaa.bacbonx.com",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module", 
   "author": {
     "name": "BacBon Limited",
     "url": "https://www.bacbonltd.com",
-    "description": "This is a react admin template for saas lms project.",
-    "dev": "Arfin Foysal",
+    "description": "This is a react admin template for Dudsaa project.",
+    "dev": "Foysal Ahmmad",
     "email": "af.arfinfoysal@gmail.com",
     "designation": "Software Engineer (PhP,Node,Laravel,React)"
   },
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  
   "dependencies": {
     "@arfinfoysal/component-generator": "^0.0.4",
     "@emotion/react": "^11.10.6",

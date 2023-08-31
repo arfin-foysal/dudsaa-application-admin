@@ -239,7 +239,7 @@ const UpdateEVoting = ({ handleClose, paramValue }) => {
                                                     className="pointer mx-1"
                                                     onClick={() => setUpdateState(item.id)}
                                                 >
-                                                    <BiEdit color="green" size={24} />
+                                                    <BiEdit color="green" size={20} />
                                                 </span>
                                                     <span className=" pointer"
                                                         onClick={() => {
@@ -252,7 +252,7 @@ const UpdateEVoting = ({ handleClose, paramValue }) => {
 
                                                             ), optionRemove(item.id)
                                                         }
-                                                        }><BiTrash color='red' size={17} />  </span>
+                                                        }><BiTrash  color='red' size={18} />  </span>
                                                 </td>
                                             </tr>
                                     ))}
